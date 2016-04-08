@@ -2,7 +2,7 @@
 
 int		lol;
 char	*lool = NULL;
-char	loool[] = "bonswag";	
+char	loool[] = "bonswag";
 
 int		main(int ac, char **av)
 {

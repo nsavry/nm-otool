@@ -2,7 +2,7 @@
 
 all: lib
 	@make -C src_nm
-#	@make -C src_otool
+	@make -C src_otool
 
 lib:
 	@make -C libft
@@ -10,23 +10,30 @@ lib:
 ft_nm: lib
 	@make -C src_nm
 
-#ft_otool: lib
-#	@make -C src_client
+ft_otool: lib
+	@make -C src_otool
 
 clean:
 	@make -C libft clean
 	@make -C src_nm clean
-#	@make -C src_client clean
+	@make -C src_otool clean
 
 fclean: clean
 	@make -C libft fcleana
 	@make -C src_nm fcleana
-#	@make -C src_client fcleana
+	@make -C src_otool fcleana
 
 re: fclean all
 
-nm: ft_nm
-	./ft_nm ft_nm
+nm: 
+	./ft_nm ft_p/serveur
 
-#otool: ft_otool
-#	./ft_otool
+cnm: ft_nm nm
+
+nmv:
+	nm ft_p/serveur
+
+nme: cnm nmv
+
+otool: ft_otool
+	./ft_otool
